@@ -1,3 +1,14 @@
 site_name: Knight Site
 
 theme: material
+  palette: 
+  
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to Dark Mode
+        
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to Light Mode
