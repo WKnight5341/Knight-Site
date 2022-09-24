@@ -1,7 +1,3 @@
-# Welcome to My Doccumentation Website
+# The "Knight Site", a personal project doccumentation website for Will Knight
 
-Hopefully it'll look like less of a pile of shit in the future
-
-cam youre a ~**person**~
-
-logan is a beautiful human being
+Updates and improved look currently pending
