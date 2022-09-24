@@ -1,8 +1,6 @@
 site_name: Knight Site
 
 theme: material
-  palette: 
-  
     - scheme: default
       toggle:
         icon: material/brightness-7
