@@ -1,6 +1,6 @@
 site_name: Knight Site
 
-theme:
+theme: material
   palette: 
 
     # Palette toggle for light mode
