@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Creating a Personal Doccumentation Website - Knight Site</title>
+    <title>Creating a Personal Documentation Website - Knight Site</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -32,7 +32,10 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Creating a Personal Doccumentation Website", url: "#_top", children: [
+          {title: "Creating a Personal Documentation Website", url: "#_top", children: [
+              {title: "Overview", url: "#overview" },
+              {title: "Software Installation", url: "#software-installation" },
+              {title: "Building The Site", url: "#building-the-site" },
           ]},
         ];
 
@@ -80,8 +83,53 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="creating-a-personal-doccumentation-website">Creating a Personal Doccumentation Website</h1>
-<p>Currently under construction</p>
+    <h1 id="creating-a-personal-documentation-website">Creating a Personal Documentation Website</h1>
+<p>My first documented project on this website will, ironically, be detailing exactly <em>how</em> I created this website. My goal is to have a comprehensive enough outline that anyone else could follow my steps exactly, and create a website of their own if they want.</p>
+<h2 id="overview">Overview</h2>
+<p>At the most basic level, this website is built using a static site generator called MkDocs, which you can find more information about <a href="https://www.mkdocs.org/">here</a>. MkDocs reads files in markdown, a type of text formatting syntax, and then converts those files into a static site that can be hosted elsewhere. In the case of this website, that static site is then being hosted by GitHub Pages, so that anyone, anywhere, can read and enjoy it.</p>
+<h2 id="software-installation">Software Installation</h2>
+<h3 id="installing-python">Installing Python</h3>
+<p>Before I could do anything else, I had to install the necessary software onto my personal computer, which turned out to be surprisingly easy. The first step was to download and install the most recent version of Python, which I got through <a href="https://www.python.org/downloads/">this link</a>.</p>
+<p>After Python was installed, I then wanted to make sure that Pythons package installation manager "Pip" had also been installed correctly. It should be installed by default along with Python, but I wanted to be sure, and I checked for this by running the following command in my computer's command prompt. (Unsure of what the command prompt is? You can get a basic overview of what it is and how to use it <a href="https://www.makeuseof.com/tag/a-beginners-guide-to-the-windows-command-line/">here</a>)</p>
+<pre><code>py -m ensurepip --upgrade
+</code></pre>
+<p><img alt="Pip is installed" src="../../Images/MAW/MAW_P1.png" /></p>
+<p>You should see something in your command prompt that looks like the above image, with a message saying something like "Requirement Already Satisfied" towards the end.</p>
+<h3 id="installing-mkdocs">Installing MkDocs</h3>
+<p>Up next was to repeat basically the same process that I used for Pip, but for MkDocs instead (and this time, using Pip to do it). Though it was a bit redundant, I ran the following command in the command prompt, and once again searched for that "Requirement Already Satisfied" message.</p>
+<pre><code>py -m pip install mkdocs
+</code></pre>
+<p>And lastly, here is another command that you can run if you want to be <em>extra sure</em>.</p>
+<pre><code>py -m pip install --upgrade mkdocs
+</code></pre>
+<p>One thing that I particularly like about MkDocs is its ability to let you use custom themes when creating your website. Themes will change the general look and layout of the site, and I'll go into more detail on how to implement them further on in this guide, but for now let's just install one.</p>
+<p>I used the following command to install the "windmill" theme. You're welcome to use this theme for your own site if you want, or you can browse through a whole list of available custom themes <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">here</a>, and select one that you like better.</p>
+<pre><code>py -m pip install mkdocs-windmill
+</code></pre>
+<h3 id="installing-git">Installing Git</h3>
+<p>To see if you already have git installed on your computer, you can run this simple command in the command prompt.</p>
+<pre><code>git version
+</code></pre>
+<p>If git is already installed, the output will tell you what version you currently have. If git is an "unknown command" then you need to install it, for which the download can be found <a href="https://gitforwindows.org/">here</a>.</p>
+<p>Git is the last <em>necessary</em> installation that you will need. If you want to get straight into making your site, you can skip the next section, but I went ahead and installed two more programs as well that help with general QOL while documenting.</p>
+<h3 id="installing-github-desktop-and-visual-studio">Installing GitHub Desktop and Visual Studio</h3>
+<p>These installs are honestly pretty simple. You'll learn more about why I use them in the future, but for now you'll want to just go ahead and install GitHub Desktop as well as Microsoft Visual Studio Code, the links for which can be found <a href="https://desktop.github.com/">here</a> and <a href="https://code.visualstudio.com/">here</a>.</p>
+<h2 id="building-the-site">Building The Site</h2>
+<p>Finally done with installs, the next step is to actually build the website. Now that may sound daunting, but this is where MkDocs shines, because it makes things surprisingly easy.</p>
+<p>The first step in this process is to open the command prompt as usual, and type in the following command. It's important to note here that you dont necessarily have to call this site "DocsTest1", that's just what I chose for this example. You could replace the text there with any name that you like.</p>
+<pre><code>py -m mkdocs new DocsTest1
+</code></pre>
+<p>From here, you'll have to do a bit of file navigation before getting to the next step. Open up your file explorer, and paste in the following path at the top to locate the folder that MkDocs just created.</p>
+<pre><code>C:\Users\-----\DocsTest1
+</code></pre>
+<p>You'll have to replace the dashes with whatever your username is on your computer. As an example, in my case, the exact path looks like "C:\Users\Willi\DocsTest1".</p>
+<p>This should take you straight into the new folder. Next, you want to locate the same folder on the left sidebar, and <em>right click</em> that folder, which brings up a menu with the option to "Open in Terminal". There's an example image below which should make finding things a bit easier, but basically once you're at that menu, you need to click "Open in Terminal" to continue from here.</p>
+<p><img alt="Open in Terminal" src="../../Images/MAW/MAW_P2.png" /></p>
+<p>At this point, you may notice that you are now working in the Windows Powershell environment rather than the command prompt. While the capabilities of the two environments are actually quite different, in our case, we will be working with them in functionally the same way.</p>
+<p>Before we do anything else, let's first see what the website looks like in its most basic form. If you run the following command in powershell, your site will be launched in a local web server, running on port 8000. You can take the http link that the command outputs towards the end, and paste that into any web browser on the same computer.</p>
+<pre><code>py -m mkdocs serve
+</code></pre>
+<p>Things are gonna look pretty basic at first, but it's a start. In the future, I'll explain how I customized my site more, but for now let's move on to hosting it publicly for anyone to see.</p>
 
   <br>
     
